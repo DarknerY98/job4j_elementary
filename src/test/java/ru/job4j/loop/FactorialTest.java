@@ -10,7 +10,6 @@ public class FactorialTest {
         int result = Factorial.calc(n);
         int expected = 120;
         Assert.assertEquals(expected, result);
-        /* напишите здесь тест, проверяющий, что факториал для числа 5 равен 120. */
     }
 
     @Test
@@ -19,6 +18,5 @@ public class FactorialTest {
         int result = Factorial.calc(n);
         int expected = 1;
         Assert.assertEquals(expected, result);
-        /* напишите здесь тест, проверяющий, что факториал для числа 0 равен 1. */
     }
 }
