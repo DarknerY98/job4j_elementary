@@ -31,13 +31,12 @@ public class MatrixCheck {
         return rsl;
     }
 
-    @SuppressWarnings("checkstyle:SimplifyBooleanExpression")
+    @SuppressWarnings({"checkstyle:SimplifyBooleanExpression", "checkstyle:NoWhitespaceBefore"})
     public static boolean isWin(char[][] board) {
         boolean result = false;
         for (int i = 0; i < board.length; i++) {
             if (board[i][i] == 'X') {
-                int row = i;
-                if (MatrixCheck.monoHorizontal(board, row) == true || MatrixCheck.monoVertical(board, row) == true) {
+                if (monoHorizontal(board, i)   || monoVertical(board, i)) {
                     result = true;
                     break;
                 }
