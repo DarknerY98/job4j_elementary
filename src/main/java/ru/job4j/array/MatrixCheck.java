@@ -31,7 +31,6 @@ public class MatrixCheck {
         return rsl;
     }
 
-    @SuppressWarnings({"checkstyle:SimplifyBooleanExpression"})
     public static boolean isWin(char[][] board) {
         boolean result = false;
         for (int i = 0; i < board.length; i++) {
