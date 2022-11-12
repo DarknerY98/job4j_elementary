@@ -8,13 +8,12 @@ public class Machine {
         int[] rsl = new int[100];
         int ostatoc = money - price;
         int size = 0;
-
         for (int coin : coins) {
-                while (ostatoc >= coins[coin]) {
+                while (ostatoc >= coin) {
                     for (int y = size; y < rsl.length; size++) {
-                        rsl[y] = coins[coin];
+                        rsl[y] = coin;
                         size = size + 1;
-                        ostatoc = ostatoc - coins[coin];
+                        ostatoc = ostatoc - coin;
                         break;
                     }
                 }
