@@ -6,22 +6,20 @@ import static java.lang.Character.isUpperCase;
 public class JavaNameValidator {
     @SuppressWarnings("checkstyle:SimplifyBooleanExpression")
     public static boolean isNameValid(String name) {
-        boolean valid = false;
-        if (!name.isEmpty()) {
-                if (isLowerLatinLetter(name.codePointAt(0))) {
-                    if (!isDigit(name.codePointAt(0))) {
-                        for (int i = 0; i < name.length(); i++) {
+        boolean valid = true;
+        if (!name.isEmpty() && !isDigit(name.codePointAt(0))  && !isLowerLatinLetter(name.codePointAt(0)) && !isDigit(name.codePointAt(0))) {
+                        for (int i = 1; i < name.length(); i++) {
                             int code = name.codePointAt(i);
-                            if (isSpecialSymbol(code) || isUpperLatinLetter(code) || isLowerLatinLetter(code)) {
-                                valid = true;
+                            if (!isSpecialSymbol(code) || !isUpperLatinLetter(code) || !isLowerLatinLetter(code) || name.isEmpty()) {
+                                valid = false;
                                 break;
-                    }
-                  }
-                }
-            }
+                            }
+                        }
+        } else if (name.isEmpty() || isDigit(name.codePointAt(0))) {
+            valid = false;
+
         }
         return valid;
-
     }
 
         public static boolean isSpecialSymbol(int code) {
