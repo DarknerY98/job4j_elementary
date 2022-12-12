@@ -15,9 +15,6 @@ public class JavaNameValidator {
                     break;
                 }
             }
-        } else if (name.isEmpty() || isDigit(name.codePointAt(0))) {
-            valid = false;
-
         }
         return valid;
     }
