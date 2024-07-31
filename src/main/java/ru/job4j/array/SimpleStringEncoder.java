@@ -18,13 +18,11 @@ public class SimpleStringEncoder {
                 counter = 1;
 
             }
-            if (i + 1 == input.length()) {
-                if (counter != 1) {
-                    result = result + symbol + counter;
-                } else {
-                    result = result + symbol;
-                }
-            }
+        }
+        if (counter != 1) {
+            result = result + symbol + counter;
+        } else {
+            result = result + symbol;
         }
         return result;
     }
